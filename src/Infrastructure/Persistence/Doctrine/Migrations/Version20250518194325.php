@@ -28,7 +28,7 @@ final class Version20250518194325 extends AbstractMigration
         $faker = Factory::create();
         for ($i=0; $i < 1000; $i++) {
             $title = $faker->unique()->sentence();
-            $slug = strtolower(str_replace(' ', '-', $title));
+            $slug = rtrim(strtolower(str_replace(' ', '-', $title)), '.');
 
             $countViews = $i < 10
                 ? $faker->numberBetween(10, 1000)
