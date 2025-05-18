@@ -12,14 +12,14 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ArticleController extends AbstractController
 {
-    #[Route(path: '/articles', name: 'article_list', methods: ['GET'])]
+    #[Route(path: '/articles/', name: 'article_list', methods: ['GET'])]
     public function getArticleList(ArticleServiceInterface $articleService): Response
     {
         $articles = $articleService->getAllArticles();
         return $this->render('app/page/article/list.html.twig', ['articles' => $articles]);
     }
 
-    #[Route(path: '/articles/{slug}', name: 'article_concrete', methods: ['GET'])]
+    #[Route(path: '/articles/{slug}/', name: 'article_concrete', methods: ['GET'])]
     public function findArticleBySlug(ArticleServiceInterface $articleService, string $slug): Response
     {
         $article = $articleService->findArticleBySlug($slug);
