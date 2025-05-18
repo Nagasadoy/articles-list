@@ -1,0 +1,12 @@
+{% extends 'app/base.html.twig' %}
+
+{% block body %}
+    <h3>Список статей</h3>
+    <ol>
+    {% for article in articles %}
+        <li>
+            <a href={{ path('article_concrete', {'slug': article.slug}) }}>{{ article.title }} [{{ is_enabled_format(article.isEnabled) }} {{ views_count_format(article.countViews) }}]</a>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}

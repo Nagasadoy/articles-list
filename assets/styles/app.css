@@ -1,3 +1,11 @@
 body {
     background-color: lightgray;
 }
+
+.article-stats-info {
+    margin: 10px 10px;
+}
+
+.article-content {
+    margin: 10px 10px;
+}
